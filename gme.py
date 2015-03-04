@@ -147,22 +147,13 @@ def Main_Menu():
     Scores = False
     Settings = False
 
-    #Sets the screen size and updates accordingly
-    #DisplaySurface(or whatever variable name is decided upon) should be a global variable so that we are all using the same display and not creating different ones
-    DisplaySurface = pygame.display.set_mode((1280, 720))
     pygame.display.update()
 
     #Gives the main menu colors (White for text, Red for arrows) named attributes
     White = (255, 255, 255)
     Red = (255, 0, 0)
 
-    #Declares DisplaySurface as global so the screen size does not change from function to function
-    global DisplaySurface
-
-    #FPS clock, may be different from method/function FPS clocks
-    FPStimer = pygame.time.Clock()
-
-    DisplaySurface.fill((0, 0, 0))
+    DISPLAYSURF.fill((0, 0, 0))
 
     Arrow_Position1 = 220
     Arrow_Position2 = 210
@@ -173,8 +164,8 @@ def Main_Menu():
     while single == False and multi == False and Scores == False and Settings == False:
         #Draws the title above the menu
             #Draws the 'P' in pong master
-            DisplaySurface.fill((0, 0, 0))
-            pygame.draw.rect(DisplaySurface, White, ( (213, 150), (854, 20) ) )
+            DISPLAYSURF.fill((0, 0, 0))
+            pygame.draw.rect(DISPLAYSURF, White, ( (213, 150), (854, 20) ) )
 
             #Sets the font for the title to 86 pixels high and standard font
             font = pygame.font.Font(None, 86)
@@ -197,18 +188,18 @@ def Main_Menu():
     
             Options = font.render("Options", False, White, (0, 0, 0) )
     
-            DisplaySurface.blit(Options, (500, 500))
-            DisplaySurface.blit(High_Scores, (500, 400) )
-            DisplaySurface.blit(Multiplayer, (500, 300))
-            DisplaySurface.blit(Single_Player, (500, 200))
-            DisplaySurface.blit(text, (213, 100))
-            DisplaySurface.blit(Extreme, (727, 120))
+            DISPLAYSURF.blit(Options, (500, 500))
+            DISPLAYSURF.blit(High_Scores, (500, 400) )
+            DISPLAYSURF.blit(Multiplayer, (500, 300))
+            DISPLAYSURF.blit(Single_Player, (500, 200))
+            DISPLAYSURF.blit(text, (213, 100))
+            DISPLAYSURF.blit(Extreme, (727, 120))
     
             #Draws the red selection arrow and determines the location with Arrow_Position
-            pygame.draw.rect(DisplaySurface, Red, ( ( 400, Arrow_Position1), (70, 10) ) )
-            pygame.draw.rect(DisplaySurface, Red, ( ( 400, Arrow_Position2), (60, 10) ) )
-            pygame.draw.rect(DisplaySurface, Red, ( ( 400, Arrow_Position3), (60, 10) ) )
-            pygame.draw.rect(DisplaySurface, Red, ( ( 440, Arrow_Position4), (10, 50) ) )
+            pygame.draw.rect(DISPLAYSURF, Red, ( ( 400, Arrow_Position1), (70, 10) ) )
+            pygame.draw.rect(DISPLAYSURF, Red, ( ( 400, Arrow_Position2), (60, 10) ) )
+            pygame.draw.rect(DISPLAYSURF, Red, ( ( 400, Arrow_Position3), (60, 10) ) )
+            pygame.draw.rect(DISPLAYSURF, Red, ( ( 440, Arrow_Position4), (10, 50) ) )
             pygame.display.update()
     
     
